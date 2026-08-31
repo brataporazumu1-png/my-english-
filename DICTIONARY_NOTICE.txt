@@ -1,0 +1,25 @@
+OFFLINE DICTIONARY DATA NOTICE
+
+This application contains a transformed English-Russian lexical dataset.
+
+1. English frequency ranking
+Source: FrequencyWords by Hermit Dave
+Corpus basis: OpenSubtitles 2018
+Project: https://github.com/hermitdave/FrequencyWords
+Content license: Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+2. English-Russian translation pairs
+Source: MUSE bilingual dictionaries, Facebook Research / Meta Research
+Project: https://github.com/facebookresearch/MUSE
+License: Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+Transformation performed for this application:
+- retained individual English tokens with Cyrillic Russian translations;
+- ranked eligible English entries using the frequency list;
+- retained the first 15,000 unique eligible English entries;
+- ranked Russian variants by Russian subtitle frequency where available;
+- retained up to 10 Russian variants per English entry;
+- serialized the result as compact JSON.
+
+The bundled dataset is intended for personal, noncommercial educational use.
+Keep this notice with redistributed copies.

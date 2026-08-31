@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="My English" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <title>My English Dictionary</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-icon">A</div>
+        <div>
+          <h1>My English</h1>
+          <p>Личный словарь</p>
+        </div>
+      </div>
+
+      <nav class="nav-list" aria-label="Основная навигация">
+        <button class="nav-item active" data-page="all">
+          <span>📚</span><span>Все слова</span>
+        </button>
+        <button class="nav-item" data-page="lessons">
+          <span>🗂️</span><span>По урокам</span>
+        </button>
+        <button class="nav-item" data-page="quiz">
+          <span>🧠</span><span>Мини-квизы</span>
+        </button>
+        <button class="nav-item" data-page="add">
+          <span>➕</span><span>Добавить урок</span>
+        </button>
+        <button class="nav-item" data-page="stats">
+          <span>📊</span><span>Прогресс</span>
+        </button>
+        <button class="nav-item" data-page="settings">
+          <span>⚙️</span><span>Настройки</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span id="storageStatus">Данные сохранены</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="mobile-header">
+        <button id="menuButton" class="icon-button" aria-label="Открыть меню">☰</button>
+        <div class="mobile-title">My English</div>
+        <button id="installButton" class="icon-button hidden" aria-label="Установить приложение">⬇️</button>
+      </header>
+
+      <section class="page active" id="page-all">
+        <div class="page-head">
+          <div>
+            <p class="eyebrow">Словарь</p>
+            <h2>Все изученные слова</h2>
+          </div>
+          <button class="primary small" data-go="add">+ Добавить урок</button>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="searchAll" type="search" placeholder="Поиск на русском или английском" autocomplete="off" />
+          </label>
+          <select id="sortAll" class="select">
+            <option value="newest">Сначала новые</option>
+            <option value="english">По английскому</option>
+            <option value="russian">По русскому</option>
+            <option value="lesson">По урокам</option>
+          </select>
+        </div>
+
+        <div class="summary-strip">
+          <div><strong id="totalWordsTop">0</strong><span>слов</span></div>
+          <div><strong id="learnedWordsTop">0</strong><span>изучено</span></div>
+          <div><strong id="lessonCountTop">0</strong><span>уроков</span></div>
+        </div>
+
+        <div id="wordList" class="card-list"></div>
+        <div id="emptyAll" class="empty-state">
+          <div class="empty-icon">📖</div>
+          <h3>Слов пока нет</h3>
+          <p>Добавь первый урок — слова автоматически появятся здесь и в квизах.</p>
+          <button class="primary" data-go="add">Добавить первый урок</button>
+        </div>
+      </section>
+
+      <section class="page" id="page-lessons">
+        <div class="page-head">
+          <div>
+            <p class="eyebrow">Коллекция</p>
+            <h2>Слова по урокам</h2>
+          </div>
+        </div>
+
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchLessons" type="search" placeholder="Найти слово в уроках" autocomplete="off" />
+        </label>
+
+        <div id="lessonList" class="lesson-list"></div>
+        <div id="emptyLessons" class="empty-state">
+          <div class="empty-icon">🗂️</div>
+          <h3>Уроков пока нет</h3>
+          <p>Создай урок и добавь пары «английское — перевод».</p>
+        </div>
+      </section>
+
+      <section class="page" id="page-quiz">
+        <div class="page-head">
+          <div>
+            <p class="eyebrow">Тренировка</p>
+            <h2>Мини-квизы</h2>
+          </div>
+        </div>
+
+        <div class="quiz-controls panel">
+          <div class="field-grid">
+            <label>
+              <span>Режим</span>
+              <select id="quizMode" class="select">
+                <option value="en-ru">Английский → русский</option>
+                <option value="ru-en">Русский → английский</option>
+                <option value="typing">Написать по-английски</option>
+                <option value="audio">Аудирование</option>
+              </select>
+            </label>
+            <label>
+              <span>Урок</span>
+              <select id="quizLesson" class="select">
+                <option value="all">Все уроки</option>
+              </select>
+            </label>
+            <label>
+              <span>Вопросов</span>
+              <select id="quizCount" class="select">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+              </select>
+            </label>
+          </div>
+          <button id="startQuiz" class="primary">Начать квиз</button>
+        </div>
+
+        <div id="quizArea" class="quiz-area hidden">
+          <div class="quiz-progress">
+            <div class="progress-track"><div id="quizProgressBar"></div></div>
+            <span id="quizProgressText">1 / 10</span>
+          </div>
+
+          <div class="quiz-card">
+            <p id="quizPromptLabel" class="muted">Выбери перевод</p>
+            <h3 id="quizQuestion">word</h3>
+            <button id="repeatAudio" class="secondary hidden">🔊 Повторить</button>
+            <div id="quizAnswers" class="answer-grid"></div>
+
+            <div id="typingBox" class="typing-box hidden">
+              <input id="typingAnswer" type="text" placeholder="Введите ответ" autocomplete="off" autocapitalize="none" />
+              <button id="submitTyping" class="primary">Проверить</button>
+            </div>
+
+            <div id="quizFeedback" class="quiz-feedback hidden"></div>
+            <button id="nextQuestion" class="primary hidden">Следующий вопрос</button>
+          </div>
+        </div>
+
+        <div id="quizResult" class="result-card hidden">
+          <div class="result-score" id="resultScore">0/0</div>
+          <h3>Квиз завершён</h3>
+          <p id="resultMessage"></p>
+          <button class="primary" id="restartQuiz">Пройти ещё раз</button>
+        </div>
+
+        <div id="emptyQuiz" class="empty-state">
+          <div class="empty-icon">🧠</div>
+          <h3>Для квиза нужны слова</h3>
+          <p>Добавь хотя бы три слова, чтобы варианты ответов были разнообразными.</p>
+        </div>
+      </section>
+
+      <section class="page" id="page-add">
+        <div class="page-head">
+          <div>
+            <p class="eyebrow">Новый материал</p>
+            <h2>Добавить урок</h2>
+          </div>
+        </div>
+
+        <form id="lessonForm" class="panel form-panel">
+          <label>
+            <span>Номер урока</span>
+            <input id="lessonNumber" type="number" min="1" step="1" placeholder="Например, 1" required />
+          </label>
+
+          <label>
+            <span>Слова урока</span>
+            <textarea id="lessonWords" rows="12" placeholder="apple — яблоко&#10;book — книга&#10;good morning — доброе утро" required></textarea>
+          </label>
+
+          <div class="hint">
+            Каждая пара — с новой строки. Можно использовать тире, дефис, двоеточие или знак «=».
+          </div>
+
+          <div class="dictionary-check-panel">
+            <label class="toggle-row">
+              <input id="dictionaryCheckEnabled" type="checkbox" checked />
+              <span class="toggle-ui" aria-hidden="true"></span>
+              <span>
+                <strong>Сверять переводы с офлайн-словарём</strong>
+                <small>База из 15 000 наиболее частотных английских словоформ с русскими переводами работает без интернета. Сомнительные переводы не заменяются молча — приложение покажет варианты перед сохранением.</small>
+              </span>
+            </label>
+            <div id="dictionaryStatus" class="dictionary-status loading">
+              <span class="status-dot"></span>
+              <span>Загружаю словарь…</span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" id="fillExample" class="secondary">Вставить пример</button>
+            <button type="submit" id="checkLessonButton" class="primary">Проверить урок</button>
+          </div>
+
+          <div id="validationReview" class="validation-review hidden">
+            <div class="review-head">
+              <div>
+                <p class="eyebrow">Проверка словаря</p>
+                <h3>Проверь найденные расхождения</h3>
+              </div>
+              <button type="button" id="cancelReview" class="icon-button" aria-label="Закрыть проверку">×</button>
+            </div>
+            <p id="validationSummary" class="muted"></p>
+            <div id="validationItems" class="validation-items"></div>
+            <div class="review-actions">
+              <button type="button" id="saveOriginalReview" class="secondary">Сохранить как введено</button>
+              <button type="button" id="saveReviewedLesson" class="primary">Сохранить проверенный урок</button>
+            </div>
+          </div>
+
+          <div id="formMessage" class="form-message hidden"></div>
+        </form>
+      </section>
+
+      <section class="page" id="page-stats">
+        <div class="page-head">
+          <div>
+            <p class="eyebrow">Результаты</p>
+            <h2>Мой прогресс</h2>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <article class="stat-card">
+            <span>Всего слов</span>
+            <strong id="statTotal">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Изучено</span>
+            <strong id="statLearned">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Правильных ответов</span>
+            <strong id="statCorrect">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Пройдено квизов</span>
+            <strong id="statQuizzes">0</strong>
+          </article>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">
+            <h3>Общий прогресс</h3>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="big-progress"><div id="bigProgressBar"></div></div>
+          <p class="muted">Слово считается изученным после трёх правильных ответов и точности не ниже 70%.</p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">
+            <h3>По урокам</h3>
+          </div>
+          <div id="lessonStats"></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-settings">
+        <div class="page-head">
+          <div>
+            <p class="eyebrow">Данные приложения</p>
+            <h2>Настройки</h2>
+          </div>
+        </div>
+
+        <div class="settings-grid">
+          <article class="panel">
+            <h3>Резервная копия</h3>
+            <p class="muted">Скачай все уроки, слова и статистику одним JSON-файлом.</p>
+            <button id="exportData" class="primary">⬇ Экспортировать</button>
+          </article>
+
+          <article class="panel">
+            <h3>Восстановление</h3>
+            <p class="muted">Загрузи ранее сохранённый файл резервной копии.</p>
+            <label class="file-button secondary">
+              ⬆ Импортировать
+              <input id="importData" type="file" accept=".json,application/json" />
+            </label>
+          </article>
+
+          <article class="panel">
+            <h3>Установка</h3>
+            <p class="muted">После размещения на HTTPS сайт можно добавить на главный экран и запускать как отдельное приложение.</p>
+            <button id="installButtonSettings" class="primary hidden">Установить приложение</button>
+            <p id="installHint" class="small-note">iPhone/iPad: Safari → «Поделиться» → «На экран Домой» → включите «Открыть как веб-приложение» → «Добавить». После первого запуска основные файлы работают офлайн.</p>
+          </article>
+
+          <article class="panel">
+            <h3>Офлайн-словарь</h3>
+            <p class="muted">В приложение встроено 15 000 наиболее частотных английских словоформ с русскими вариантами перевода. Проверка выполняется прямо на телефоне — интернет, API-ключ и платная нейросеть не нужны.</p>
+            <div class="dictionary-meta">
+              <strong>15 000</strong><span>словарных статей</span>
+            </div>
+            <p class="small-note">Частотность: FrequencyWords/OpenSubtitles 2018 (CC BY-SA 4.0). Переводы: MUSE bilingual dictionaries (CC BY-NC 4.0). База предназначена для личного некоммерческого обучения.</p>
+          </article>
+
+          <article class="panel danger-panel">
+            <h3>Очистить данные</h3>
+            <p class="muted">Удалит все слова, уроки и результаты с этого устройства.</p>
+            <button id="clearData" class="danger">Удалить всё</button>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="overlay" class="overlay hidden"></div>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
