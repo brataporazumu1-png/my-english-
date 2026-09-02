@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-english-dictionary-v6-ios-pwa";
+const CACHE_NAME = "my-english-dictionary-v7-full-editor";
 const APP_FILES = [
   "./",
   "./index.html",

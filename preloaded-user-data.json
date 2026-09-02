@@ -1,0 +1,192 @@
+{
+  "app": "My English Dictionary",
+  "exportedAt": "2026-09-02T10:22:29.813Z",
+  "data": {
+    "words": [
+      {
+        "id": "83a6a007-3f31-4333-89e4-2c379eda3344",
+        "en": "lauht at",
+        "ru": "смеяться над …",
+        "lesson": 39,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:29:25.545Z"
+      },
+      {
+        "id": "57577c08-3362-4806-a4bb-c949e52e3583",
+        "en": "joke",
+        "ru": "шутка",
+        "lesson": 39,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:29:25.545Z"
+      },
+      {
+        "id": "86fd4f32-947c-4cf4-815b-cad681d424ad",
+        "en": "in hospital",
+        "ru": "в больнице",
+        "lesson": 39,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:29:25.545Z"
+      },
+      {
+        "id": "0557ed73-dbe6-406e-813d-8c91a1373376",
+        "en": "compare",
+        "ru": "сравнивать",
+        "lesson": 39,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:29:25.546Z"
+      },
+      {
+        "id": "2df39d4c-d91e-401b-bdb0-adad95996c29",
+        "en": "necessary",
+        "ru": "необходимый",
+        "lesson": 39,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:29:25.546Z"
+      },
+      {
+        "id": "7d94e9d8-739b-418a-a17b-ddbc833973d7",
+        "en": "prepare for",
+        "ru": "готовиться к",
+        "lesson": 39,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:29:25.546Z"
+      },
+      {
+        "id": "c2c0ec49-c23d-495d-8411-f7bfb0f812dd",
+        "en": "fat",
+        "ru": "толстый",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "3f55177e-d5b7-4d84-b37b-f4d2a388f2a1",
+        "en": "surprising",
+        "ru": "удивительно",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "12bee7ea-9524-4f29-a2c1-60b0d0fc2802",
+        "en": "convenient for me",
+        "ru": "удобно для меня",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "2233aaf5-bbfd-48b4-92be-318e24e01f21",
+        "en": "chair",
+        "ru": "стул",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "6f7fa7e3-5c62-4df8-9cca-36f707b6e70a",
+        "en": "armchair",
+        "ru": "кресло",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "bef4247c-5717-4e97-a808-678cdd632d52",
+        "en": "desk",
+        "ru": "письменный стол",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "bce47846-a92e-4e95-bcd6-6c17c6eb8f20",
+        "en": "clear",
+        "ru": "ясный",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "16d6e797-4b7b-4c9c-a9b0-f48ecb51059a",
+        "en": "go shopping",
+        "ru": "ходить за покупками",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "d76ca6fa-5aa8-4541-ad29-35ee0a6b001a",
+        "en": "do the shopping",
+        "ru": "делать покупки",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "e837efc2-19e7-44d2-a0cd-e2cb9be7edcf",
+        "en": "communicate",
+        "ru": "общаться",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "c29dab8e-e36c-4ff8-b930-b06147b5a18a",
+        "en": "cake",
+        "ru": "пирог",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "10a9802b-f02d-458d-a75a-4dcb6fb9108e",
+        "en": "furniture",
+        "ru": "мебель",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "4f80d937-ebe3-412c-8101-f5d38e458568",
+        "en": "advertising",
+        "ru": "реклама",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.498Z"
+      },
+      {
+        "id": "096f84fc-fb82-42bf-9918-11f09ae9ea53",
+        "en": "advertisement",
+        "ru": "рекламное объявление",
+        "lesson": 40,
+        "correct": 0,
+        "wrong": 0,
+        "createdAt": "2026-09-01T17:56:58.499Z"
+      }
+    ],
+    "quizHistory": [],
+    "settings": {
+      "version": 2
+    }
+  }
+}

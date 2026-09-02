@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png" />
   <link rel="icon" href="icons/icon-192.png" />
   <link rel="stylesheet" href="style.css" />
-  <title>My English Dictionary</title>
+  <title>My English Dictionary · Editor</title>
 </head>
 <body>
   <div class="app-shell">
@@ -102,10 +102,13 @@
           </div>
         </div>
 
-        <label class="search-box">
-          <span>⌕</span>
-          <input id="searchLessons" type="search" placeholder="Найти слово в уроках" autocomplete="off" />
-        </label>
+        <div class="lesson-tools">
+          <label class="search-box">
+            <span>⌕</span>
+            <input id="searchLessons" type="search" placeholder="Найти слово в уроках" autocomplete="off" />
+          </label>
+          <p class="small-note">Нажми «Редактировать» у урока, чтобы менять его номер, состав слов, переводы и статистику. ✏️ у слова редактирует только выбранную запись.</p>
+        </div>
 
         <div id="lessonList" class="lesson-list"></div>
         <div id="emptyLessons" class="empty-state">
@@ -343,6 +346,83 @@
         </div>
       </section>
     </main>
+  </div>
+
+
+  <div id="wordEditModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="wordEditTitle">
+    <form id="wordEditForm" class="modal-card word-edit-modal-card">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">Запись словаря</p>
+          <h3 id="wordEditTitle">Редактировать слово</h3>
+        </div>
+        <button type="button" id="closeWordEditor" class="icon-button" aria-label="Закрыть">×</button>
+      </div>
+
+      <div class="modal-grid">
+        <label class="span-2">
+          <span>English</span>
+          <input id="editWordEn" type="text" required />
+        </label>
+        <label class="span-2">
+          <span>Перевод</span>
+          <input id="editWordRu" type="text" required />
+        </label>
+        <label>
+          <span>Номер урока</span>
+          <input id="editWordLesson" type="number" min="1" step="1" required />
+        </label>
+        <label>
+          <span>Правильных ✓</span>
+          <input id="editWordCorrect" type="number" min="0" step="1" />
+        </label>
+        <label>
+          <span>Ошибок ✕</span>
+          <input id="editWordWrong" type="number" min="0" step="1" />
+        </label>
+        <label class="span-2">
+          <span>Дата создания (ISO)</span>
+          <input id="editWordCreatedAt" type="text" placeholder="2026-09-02T10:00:00.000Z" />
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" id="cancelWordEditor" class="secondary">Отмена</button>
+        <button type="submit" class="primary">Сохранить изменения</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="lessonEditModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="lessonEditorTitle">
+    <form id="lessonEditForm" class="modal-card lesson-edit-modal-card">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">Полное редактирование</p>
+          <h3 id="lessonEditorTitle">Редактировать урок</h3>
+        </div>
+        <button type="button" id="closeLessonEditor" class="icon-button" aria-label="Закрыть">×</button>
+      </div>
+
+      <div class="lesson-number-editor">
+        <label>
+          <span>Номер урока</span>
+          <input id="editLessonNumber" type="number" min="1" step="1" required />
+        </label>
+        <button type="button" id="addLessonEditorRow" class="secondary">＋ Добавить слово</button>
+      </div>
+
+      <div class="lesson-editor-labels">
+        <span>Можно менять английское слово, перевод, статистику, удалять строки и добавлять новые.</span>
+      </div>
+      <div id="lessonEditorRows" class="lesson-editor-rows"></div>
+
+      <div class="modal-actions lesson-modal-actions">
+        <button type="button" id="deleteLessonButton" class="danger">Удалить урок</button>
+        <span class="modal-actions-spacer"></span>
+        <button type="button" id="cancelLessonEditor" class="secondary">Отмена</button>
+        <button type="submit" class="primary">Сохранить урок</button>
+      </div>
+    </form>
   </div>
 
   <div id="overlay" class="overlay hidden"></div>

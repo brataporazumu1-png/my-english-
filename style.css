@@ -800,3 +800,170 @@ label > span {
   .review-actions button { width:100%; }
   .validation-title { flex-direction:column; gap:3px; }
 }
+
+
+/* Full lesson/word editor */
+body.modal-open { overflow: hidden; }
+
+.lesson-tools {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.lesson-tools .search-box { margin: 0; }
+
+.lesson-head-editable {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  gap: 10px;
+}
+.lesson-toggle-main {
+  min-width: 0;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+}
+.lesson-toggle-main > div {
+  display: grid;
+  gap: 4px;
+}
+.lesson-toggle-main strong { font-size: 17px; }
+.lesson-toggle-main span:not(.lesson-chevron) { color: var(--muted); font-size: 12px; }
+.lesson-chevron { font-size: 21px; color: var(--muted); }
+.lesson-edit-button { align-self: center; white-space: nowrap; }
+
+.lesson-row-text { min-width: 0; }
+.lesson-row-text strong, .lesson-row-text > div { overflow-wrap: anywhere; }
+.lesson-row-text small { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; }
+.lesson-row-actions { display: flex; gap: 6px; flex: 0 0 auto; }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(3, 8, 18, .78);
+  backdrop-filter: blur(8px);
+}
+.modal-card {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #111b2c;
+  box-shadow: 0 30px 100px rgba(0,0,0,.55);
+}
+.lesson-edit-modal-card { width: min(1040px, 100%); }
+.modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.modal-head h3 { margin: 0; font-size: 24px; }
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+.modal-grid label,
+.lesson-number-editor label,
+.lesson-edit-fields label {
+  display: grid;
+  gap: 7px;
+}
+.modal-grid label > span,
+.lesson-number-editor label > span,
+.lesson-edit-fields label > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.span-2 { grid-column: 1 / -1; }
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+.modal-actions-spacer { flex: 1; }
+
+.lesson-number-editor {
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) auto;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.lesson-editor-labels {
+  margin: 12px 0 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.lesson-editor-rows {
+  display: grid;
+  gap: 8px;
+}
+.lesson-edit-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 8px;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.025);
+}
+.lesson-edit-fields {
+  display: grid;
+  grid-template-columns: minmax(130px,1.1fr) minmax(160px,1.4fr) 78px 78px;
+  gap: 8px;
+}
+.lesson-edit-fields input {
+  min-height: 42px;
+  padding: 9px 10px;
+}
+.lesson-remove-row { margin-bottom: 1px; }
+
+@media (max-width: 760px) {
+  .modal { padding: 0; align-items: end; }
+  .modal-card {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: 22px 22px 0 0;
+    padding: 18px 14px calc(18px + env(safe-area-inset-bottom));
+  }
+  .lesson-head-editable { grid-template-columns: 1fr; }
+  .lesson-edit-button { width: 100%; }
+  .lesson-row { align-items: flex-start; }
+  .lesson-row-actions { flex-wrap: wrap; justify-content: flex-end; }
+  .modal-grid { grid-template-columns: 1fr; }
+  .span-2 { grid-column: auto; }
+  .lesson-number-editor { grid-template-columns: 1fr; }
+  .lesson-number-editor .secondary { width: 100%; }
+  .lesson-edit-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+  .lesson-edit-fields label:nth-child(1),
+  .lesson-edit-fields label:nth-child(2) {
+    grid-column: 1 / -1;
+  }
+  .lesson-modal-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .lesson-modal-actions .danger { grid-column: 1 / -1; }
+  .lesson-modal-actions .modal-actions-spacer { display: none; }
+}

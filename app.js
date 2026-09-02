@@ -1,9 +1,193 @@
 const STORAGE_KEY = "myEnglishDictionaryData_v2";
 
+const BUNDLED_DATA_VERSION = "user-json-2026-09-02-v1";
 const defaultData = {
-  words: [],
-  quizHistory: [],
-  settings: { version: 2 }
+  "words": [
+    {
+      "id": "83a6a007-3f31-4333-89e4-2c379eda3344",
+      "en": "lauht at",
+      "ru": "смеяться над …",
+      "lesson": 39,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.545Z"
+    },
+    {
+      "id": "57577c08-3362-4806-a4bb-c949e52e3583",
+      "en": "joke",
+      "ru": "шутка",
+      "lesson": 39,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.545Z"
+    },
+    {
+      "id": "86fd4f32-947c-4cf4-815b-cad681d424ad",
+      "en": "in hospital",
+      "ru": "в больнице",
+      "lesson": 39,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.545Z"
+    },
+    {
+      "id": "0557ed73-dbe6-406e-813d-8c91a1373376",
+      "en": "compare",
+      "ru": "сравнивать",
+      "lesson": 39,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.546Z"
+    },
+    {
+      "id": "2df39d4c-d91e-401b-bdb0-adad95996c29",
+      "en": "necessary",
+      "ru": "необходимый",
+      "lesson": 39,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.546Z"
+    },
+    {
+      "id": "7d94e9d8-739b-418a-a17b-ddbc833973d7",
+      "en": "prepare for",
+      "ru": "готовиться к",
+      "lesson": 39,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.546Z"
+    },
+    {
+      "id": "c2c0ec49-c23d-495d-8411-f7bfb0f812dd",
+      "en": "fat",
+      "ru": "толстый",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "3f55177e-d5b7-4d84-b37b-f4d2a388f2a1",
+      "en": "surprising",
+      "ru": "удивительно",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "12bee7ea-9524-4f29-a2c1-60b0d0fc2802",
+      "en": "convenient for me",
+      "ru": "удобно для меня",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "2233aaf5-bbfd-48b4-92be-318e24e01f21",
+      "en": "chair",
+      "ru": "стул",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "6f7fa7e3-5c62-4df8-9cca-36f707b6e70a",
+      "en": "armchair",
+      "ru": "кресло",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "bef4247c-5717-4e97-a808-678cdd632d52",
+      "en": "desk",
+      "ru": "письменный стол",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "bce47846-a92e-4e95-bcd6-6c17c6eb8f20",
+      "en": "clear",
+      "ru": "ясный",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "16d6e797-4b7b-4c9c-a9b0-f48ecb51059a",
+      "en": "go shopping",
+      "ru": "ходить за покупками",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "d76ca6fa-5aa8-4541-ad29-35ee0a6b001a",
+      "en": "do the shopping",
+      "ru": "делать покупки",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "e837efc2-19e7-44d2-a0cd-e2cb9be7edcf",
+      "en": "communicate",
+      "ru": "общаться",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "c29dab8e-e36c-4ff8-b930-b06147b5a18a",
+      "en": "cake",
+      "ru": "пирог",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "10a9802b-f02d-458d-a75a-4dcb6fb9108e",
+      "en": "furniture",
+      "ru": "мебель",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "4f80d937-ebe3-412c-8101-f5d38e458568",
+      "en": "advertising",
+      "ru": "реклама",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.498Z"
+    },
+    {
+      "id": "096f84fc-fb82-42bf-9918-11f09ae9ea53",
+      "en": "advertisement",
+      "ru": "рекламное объявление",
+      "lesson": 40,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:56:58.499Z"
+    }
+  ],
+  "quizHistory": [],
+  "settings": {
+    "version": 2
+  }
 };
 
 let state = loadData();
@@ -17,17 +201,66 @@ const $ = (id) => document.getElementById(id);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 
 function loadData() {
+  const normalizeWordKey = (word) => [
+    String(word?.en || "").trim().toLocaleLowerCase("en-US"),
+    String(word?.ru || "").trim().toLocaleLowerCase("ru-RU"),
+    Number(word?.lesson || 0)
+  ].join("|");
+
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return structuredClone(defaultData);
-    const parsed = JSON.parse(raw);
-    return {
-      words: Array.isArray(parsed.words) ? parsed.words : [],
-      quizHistory: Array.isArray(parsed.quizHistory) ? parsed.quizHistory : [],
-      settings: parsed.settings || { version: 2 }
-    };
+    let loaded;
+
+    if (!raw) {
+      loaded = structuredClone(defaultData);
+    } else {
+      const parsed = JSON.parse(raw);
+      loaded = {
+        words: Array.isArray(parsed.words) ? parsed.words : [],
+        quizHistory: Array.isArray(parsed.quizHistory) ? parsed.quizHistory : [],
+        settings: parsed.settings || { version: 2 }
+      };
+    }
+
+    loaded.settings = loaded.settings || { version: 2 };
+
+    if (loaded.settings.bundledDataVersion !== BUNDLED_DATA_VERSION) {
+      const existingIds = new Set(loaded.words.map((word) => String(word.id || "")));
+      const existingKeys = new Set(loaded.words.map(normalizeWordKey));
+
+      for (const bundledWord of defaultData.words) {
+        const byId = bundledWord.id && existingIds.has(String(bundledWord.id));
+        const byContent = existingKeys.has(normalizeWordKey(bundledWord));
+        if (byId || byContent) continue;
+        loaded.words.push(structuredClone(bundledWord));
+        if (bundledWord.id) existingIds.add(String(bundledWord.id));
+        existingKeys.add(normalizeWordKey(bundledWord));
+      }
+
+      if (!loaded.quizHistory.length && Array.isArray(defaultData.quizHistory)) {
+        loaded.quizHistory = structuredClone(defaultData.quizHistory);
+      }
+
+      loaded.settings = {
+        ...defaultData.settings,
+        ...loaded.settings,
+        bundledDataVersion: BUNDLED_DATA_VERSION
+      };
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(loaded));
+    }
+
+    return loaded;
   } catch {
-    return structuredClone(defaultData);
+    const fallback = structuredClone(defaultData);
+    fallback.settings = {
+      ...(fallback.settings || { version: 2 }),
+      bundledDataVersion: BUNDLED_DATA_VERSION
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(fallback));
+    } catch {}
+    return fallback;
   }
 }
 
@@ -147,6 +380,7 @@ function renderWords() {
         </div>
       </div>
       <div class="word-actions">
+        <button class="icon-button" data-edit-word="${w.id}" aria-label="Редактировать слово">✏️</button>
         <button class="icon-button" data-delete="${w.id}" aria-label="Удалить слово">🗑️</button>
       </div>
     </article>
@@ -163,28 +397,38 @@ function renderLessons() {
   const lessons = uniqueLessons();
 
   container.innerHTML = lessons.map((lesson) => {
-    const items = state.words.filter((w) => Number(w.lesson) === lesson)
-      .filter((w) => !query || cleanSearch(w.en).includes(query) || cleanSearch(w.ru).includes(query));
+    const allItems = state.words.filter((w) => Number(w.lesson) === lesson);
+    const items = allItems.filter((w) =>
+      !query || cleanSearch(w.en).includes(query) || cleanSearch(w.ru).includes(query)
+    );
 
     if (query && !items.length) return "";
 
     return `
-      <article class="lesson-card">
-        <button class="lesson-head" data-toggle-lesson>
-          <div>
-            <strong>Урок ${lesson}</strong>
-            <span>${items.length} ${plural(items.length, "слово", "слова", "слов")}</span>
-          </div>
-          <span>⌄</span>
-        </button>
+      <article class="lesson-card" data-lesson-card="${lesson}">
+        <div class="lesson-head lesson-head-editable">
+          <button class="lesson-toggle-main" data-toggle-lesson type="button">
+            <div>
+              <strong>Урок ${lesson}</strong>
+              <span>${allItems.length} ${plural(allItems.length, "слово", "слова", "слов")}</span>
+            </div>
+            <span class="lesson-chevron">⌄</span>
+          </button>
+          <button class="secondary small lesson-edit-button" data-edit-lesson="${lesson}" type="button">✏️ Редактировать</button>
+        </div>
         <div class="lesson-body">
           ${items.map((w) => `
             <div class="lesson-row">
-              <div>
+              <div class="lesson-row-text">
                 <strong>${escapeHtml(w.en)}</strong>
                 <div>${escapeHtml(w.ru)}</div>
+                <small>✓ ${w.correct || 0} · ✕ ${w.wrong || 0}</small>
               </div>
-              <button class="icon-button" data-speak="${escapeHtml(w.en)}">🔊</button>
+              <div class="lesson-row-actions">
+                <button class="icon-button" data-speak="${escapeHtml(w.en)}" type="button" aria-label="Озвучить">🔊</button>
+                <button class="icon-button" data-edit-word="${w.id}" type="button" aria-label="Редактировать">✏️</button>
+                <button class="icon-button" data-delete="${w.id}" type="button" aria-label="Удалить">🗑️</button>
+              </div>
             </div>
           `).join("")}
         </div>
@@ -466,6 +710,186 @@ function deleteWord(id) {
   showToast("Слово удалено");
 }
 
+
+let editingWordId = null;
+let editingLessonNumber = null;
+
+function openModal(id) {
+  const modal = $(id);
+  if (!modal) return;
+  modal.classList.remove("hidden");
+  document.body.classList.add("modal-open");
+}
+
+function closeModal(id) {
+  const modal = $(id);
+  if (!modal) return;
+  modal.classList.add("hidden");
+  if (!document.querySelector(".modal:not(.hidden)")) {
+    document.body.classList.remove("modal-open");
+  }
+}
+
+function openWordEditor(id) {
+  const word = state.words.find((item) => String(item.id) === String(id));
+  if (!word) return;
+
+  editingWordId = word.id;
+  $("editWordEn").value = word.en || "";
+  $("editWordRu").value = word.ru || "";
+  $("editWordLesson").value = Number(word.lesson) || 1;
+  $("editWordCorrect").value = Number(word.correct) || 0;
+  $("editWordWrong").value = Number(word.wrong) || 0;
+  $("editWordCreatedAt").value = word.createdAt || "";
+  openModal("wordEditModal");
+  setTimeout(() => $("editWordEn").focus(), 30);
+}
+
+function saveWordEditor(event) {
+  event.preventDefault();
+  const word = state.words.find((item) => String(item.id) === String(editingWordId));
+  if (!word) {
+    closeModal("wordEditModal");
+    return;
+  }
+
+  const en = $("editWordEn").value.trim();
+  const ru = $("editWordRu").value.trim();
+  const lesson = Number($("editWordLesson").value);
+  const correct = Math.max(0, Number($("editWordCorrect").value) || 0);
+  const wrong = Math.max(0, Number($("editWordWrong").value) || 0);
+  const createdAt = $("editWordCreatedAt").value.trim();
+
+  if (!en || !ru) {
+    showToast("Английское слово и перевод не могут быть пустыми");
+    return;
+  }
+  if (!Number.isInteger(lesson) || lesson < 1) {
+    showToast("Укажи корректный номер урока");
+    return;
+  }
+
+  word.en = en;
+  word.ru = ru;
+  word.lesson = lesson;
+  word.correct = Math.floor(correct);
+  word.wrong = Math.floor(wrong);
+  word.createdAt = createdAt || word.createdAt || new Date().toISOString();
+
+  saveData();
+  closeModal("wordEditModal");
+  showToast("Слово обновлено");
+}
+
+function lessonEditorRow(word = null) {
+  const id = word?.id || "";
+  const en = word?.en || "";
+  const ru = word?.ru || "";
+  const correct = Number(word?.correct) || 0;
+  const wrong = Number(word?.wrong) || 0;
+  const createdAt = word?.createdAt || new Date().toISOString();
+
+  return `
+    <div class="lesson-edit-row" data-id="${escapeHtml(id)}" data-created-at="${escapeHtml(createdAt)}">
+      <div class="lesson-edit-fields">
+        <label>
+          <span>English</span>
+          <input class="lesson-edit-en" type="text" value="${escapeHtml(en)}" placeholder="English" />
+        </label>
+        <label>
+          <span>Перевод</span>
+          <input class="lesson-edit-ru" type="text" value="${escapeHtml(ru)}" placeholder="Русский перевод" />
+        </label>
+        <label class="compact-field">
+          <span>✓</span>
+          <input class="lesson-edit-correct" type="number" min="0" step="1" value="${correct}" />
+        </label>
+        <label class="compact-field">
+          <span>✕</span>
+          <input class="lesson-edit-wrong" type="number" min="0" step="1" value="${wrong}" />
+        </label>
+      </div>
+      <button class="icon-button lesson-remove-row" type="button" data-remove-lesson-row aria-label="Удалить строку">🗑️</button>
+    </div>
+  `;
+}
+
+function openLessonEditor(lesson) {
+  lesson = Number(lesson);
+  const words = state.words.filter((word) => Number(word.lesson) === lesson);
+  if (!words.length) return;
+
+  editingLessonNumber = lesson;
+  $("lessonEditorTitle").textContent = `Редактировать урок ${lesson}`;
+  $("editLessonNumber").value = lesson;
+  $("lessonEditorRows").innerHTML = words.map((word) => lessonEditorRow(word)).join("");
+  openModal("lessonEditModal");
+}
+
+function addLessonEditorRow() {
+  $("lessonEditorRows").insertAdjacentHTML("beforeend", lessonEditorRow());
+  const rows = $$("#lessonEditorRows .lesson-edit-row");
+  rows.at(-1)?.querySelector(".lesson-edit-en")?.focus();
+}
+
+function saveLessonEditor(event) {
+  event.preventDefault();
+  const newLesson = Number($("editLessonNumber").value);
+  if (!Number.isInteger(newLesson) || newLesson < 1) {
+    showToast("Укажи корректный номер урока");
+    return;
+  }
+
+  const originalWords = state.words.filter((word) => Number(word.lesson) === Number(editingLessonNumber));
+  const originalById = new Map(originalWords.map((word) => [String(word.id), word]));
+  const originalIds = new Set(originalWords.map((word) => String(word.id)));
+  const rebuilt = [];
+
+  for (const row of $$("#lessonEditorRows .lesson-edit-row")) {
+    const en = row.querySelector(".lesson-edit-en").value.trim();
+    const ru = row.querySelector(".lesson-edit-ru").value.trim();
+    if (!en && !ru) continue;
+    if (!en || !ru) {
+      showToast("В каждой строке заполни English и перевод");
+      return;
+    }
+
+    const id = row.dataset.id;
+    const old = id ? originalById.get(String(id)) : null;
+    rebuilt.push({
+      ...(old || {}),
+      id: old?.id || (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`),
+      en,
+      ru,
+      lesson: newLesson,
+      correct: Math.max(0, Math.floor(Number(row.querySelector(".lesson-edit-correct").value) || 0)),
+      wrong: Math.max(0, Math.floor(Number(row.querySelector(".lesson-edit-wrong").value) || 0)),
+      createdAt: old?.createdAt || row.dataset.createdAt || new Date().toISOString()
+    });
+  }
+
+  state.words = state.words.filter((word) => !originalIds.has(String(word.id)));
+  state.words.push(...rebuilt);
+  saveData();
+  closeModal("lessonEditModal");
+  showToast(`Урок ${newLesson} сохранён`);
+}
+
+function deleteEditedLesson() {
+  const lesson = Number(editingLessonNumber);
+  const count = state.words.filter((word) => Number(word.lesson) === lesson).length;
+  if (!count) {
+    closeModal("lessonEditModal");
+    return;
+  }
+  if (!confirm(`Удалить урок ${lesson} целиком (${count} ${plural(count, "слово", "слова", "слов")})?`)) return;
+
+  state.words = state.words.filter((word) => Number(word.lesson) !== lesson);
+  saveData();
+  closeModal("lessonEditModal");
+  showToast(`Урок ${lesson} удалён`);
+}
+
 function startQuiz() {
   const lesson = $("quizLesson").value;
   const pool = state.words.filter((w) => lesson === "all" || String(w.lesson) === lesson);
@@ -703,6 +1127,15 @@ document.addEventListener("click", (event) => {
   const speakButton = event.target.closest("[data-speak]");
   if (speakButton) speak(speakButton.dataset.speak);
 
+  const editWordButton = event.target.closest("[data-edit-word]");
+  if (editWordButton) openWordEditor(editWordButton.dataset.editWord);
+
+  const editLessonButton = event.target.closest("[data-edit-lesson]");
+  if (editLessonButton) openLessonEditor(editLessonButton.dataset.editLesson);
+
+  const removeLessonRow = event.target.closest("[data-remove-lesson-row]");
+  if (removeLessonRow) removeLessonRow.closest(".lesson-edit-row")?.remove();
+
   const deleteButton = event.target.closest("[data-delete]");
   if (deleteButton) deleteWord(deleteButton.dataset.delete);
 
@@ -724,6 +1157,28 @@ $("overlay").addEventListener("click", closeSidebar);
 $("searchAll").addEventListener("input", renderWords);
 $("sortAll").addEventListener("change", renderWords);
 $("searchLessons").addEventListener("input", renderLessons);
+
+$("wordEditForm").addEventListener("submit", saveWordEditor);
+$("closeWordEditor").addEventListener("click", () => closeModal("wordEditModal"));
+$("cancelWordEditor").addEventListener("click", () => closeModal("wordEditModal"));
+
+$("lessonEditForm").addEventListener("submit", saveLessonEditor);
+$("closeLessonEditor").addEventListener("click", () => closeModal("lessonEditModal"));
+$("cancelLessonEditor").addEventListener("click", () => closeModal("lessonEditModal"));
+$("addLessonEditorRow").addEventListener("click", addLessonEditorRow);
+$("deleteLessonButton").addEventListener("click", deleteEditedLesson);
+
+$$(".modal").forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) closeModal(modal.id);
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  $$(".modal:not(.hidden)").forEach((modal) => closeModal(modal.id));
+});
+
 $("lessonForm").addEventListener("submit", prepareLessonReview);
 $("cancelReview").addEventListener("click", closeLessonReview);
 $("saveReviewedLesson").addEventListener("click", () => saveReviewed(false));
