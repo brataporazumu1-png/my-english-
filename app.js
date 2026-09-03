@@ -199,6 +199,13 @@ let pendingLessonReview = null;
 
 const $ = (id) => document.getElementById(id);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
+function normalizeEnglishCase(text = "") {
+  return String(text).trim().toLocaleLowerCase("en-US");
+}
+function normalizeWordRecord(word) {
+  return { ...word, en: normalizeEnglishCase(word?.en) };
+}
+
 
 function loadData() {
   const normalizeWordKey = (word) => [
@@ -213,10 +220,11 @@ function loadData() {
 
     if (!raw) {
       loaded = structuredClone(defaultData);
+      loaded.words = (loaded.words || []).map(normalizeWordRecord);
     } else {
       const parsed = JSON.parse(raw);
       loaded = {
-        words: Array.isArray(parsed.words) ? parsed.words : [],
+        words: Array.isArray(parsed.words) ? parsed.words.map(normalizeWordRecord) : [],
         quizHistory: Array.isArray(parsed.quizHistory) ? parsed.quizHistory : [],
         settings: parsed.settings || { version: 2 }
       };
@@ -232,7 +240,7 @@ function loadData() {
         const byId = bundledWord.id && existingIds.has(String(bundledWord.id));
         const byContent = existingKeys.has(normalizeWordKey(bundledWord));
         if (byId || byContent) continue;
-        loaded.words.push(structuredClone(bundledWord));
+        loaded.words.push(normalizeWordRecord(structuredClone(bundledWord)));
         if (bundledWord.id) existingIds.add(String(bundledWord.id));
         existingKeys.add(normalizeWordKey(bundledWord));
       }
@@ -253,6 +261,7 @@ function loadData() {
     return loaded;
   } catch {
     const fallback = structuredClone(defaultData);
+    fallback.words = (fallback.words || []).map(normalizeWordRecord);
     fallback.settings = {
       ...(fallback.settings || { version: 2 }),
       bundledDataVersion: BUNDLED_DATA_VERSION
@@ -265,6 +274,7 @@ function loadData() {
 }
 
 function saveData() {
+  state.words = (state.words || []).map(normalizeWordRecord);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   $("storageStatus").textContent = "Данные сохранены";
   renderAll();
@@ -617,7 +627,7 @@ function saveLessonPairs(lesson, pairs) {
 
     state.words.push({
       id: crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`,
-      en: pair.en,
+      en: normalizeEnglishCase(pair.en),
       ru: pair.ru,
       lesson,
       correct: 0,
@@ -687,7 +697,7 @@ function parseLessonLines(text) {
   for (const line of lines) {
     const match = line.match(/^(.+?)\s*(?:—|–|-|:|=)\s*(.+)$/);
     if (!match) continue;
-    const en = match[1].trim();
+    const en = normalizeEnglishCase(match[1]);
     const ru = match[2].trim();
     if (!en || !ru) continue;
     parsed.push({ en, ru });
@@ -753,7 +763,7 @@ function saveWordEditor(event) {
     return;
   }
 
-  const en = $("editWordEn").value.trim();
+  const en = normalizeEnglishCase($("editWordEn").value);
   const ru = $("editWordRu").value.trim();
   const lesson = Number($("editWordLesson").value);
   const correct = Math.max(0, Number($("editWordCorrect").value) || 0);
@@ -769,7 +779,7 @@ function saveWordEditor(event) {
     return;
   }
 
-  word.en = en;
+  word.en = normalizeEnglishCase(en);
   word.ru = ru;
   word.lesson = lesson;
   word.correct = Math.floor(correct);
@@ -846,7 +856,7 @@ function saveLessonEditor(event) {
   const rebuilt = [];
 
   for (const row of $$("#lessonEditorRows .lesson-edit-row")) {
-    const en = row.querySelector(".lesson-edit-en").value.trim();
+    const en = normalizeEnglishCase(row.querySelector(".lesson-edit-en").value);
     const ru = row.querySelector(".lesson-edit-ru").value.trim();
     if (!en && !ru) continue;
     if (!en || !ru) {
@@ -1075,7 +1085,7 @@ async function importData(file) {
     if (!incoming || !Array.isArray(incoming.words)) throw new Error("Неверный формат");
 
     state = {
-      words: incoming.words,
+      words: incoming.words.map(normalizeWordRecord),
       quizHistory: Array.isArray(incoming.quizHistory) ? incoming.quizHistory : [],
       settings: incoming.settings || { version: 2 }
     };
@@ -1132,6 +1142,9 @@ document.addEventListener("click", (event) => {
 
   const editLessonButton = event.target.closest("[data-edit-lesson]");
   if (editLessonButton) openLessonEditor(editLessonButton.dataset.editLesson);
+
+  const editIrregularButton = event.target.closest("[data-edit-irregular]");
+  if (editIrregularButton) openIrregularEditor(editIrregularButton.dataset.editIrregular);
 
   const removeLessonRow = event.target.closest("[data-remove-lesson-row]");
   if (removeLessonRow) removeLessonRow.closest(".lesson-edit-row")?.remove();
@@ -1259,3 +1272,119 @@ if ("serviceWorker" in navigator) {
 
 loadOfflineDictionary();
 renderAll();
+
+const IRREGULAR_STORAGE_KEY = "myEnglishIrregularVerbs_v1";
+let irregularVerbs = loadIrregularVerbs();
+let editingIrregularId = null;
+
+function normalizeIrregularVerb(item = {}) {
+  return {
+    id: String(item.id || (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`)),
+    v1: normalizeEnglishCase(item.v1),
+    v2: normalizeEnglishCase(item.v2),
+    v3: normalizeEnglishCase(item.v3),
+    ru: String(item.ru || "").trim()
+  };
+}
+function loadIrregularVerbs() {
+  try {
+    const raw = localStorage.getItem(IRREGULAR_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed.map(normalizeIrregularVerb) : [];
+  } catch { return []; }
+}
+function saveIrregularVerbs() {
+  irregularVerbs = irregularVerbs.map(normalizeIrregularVerb);
+  localStorage.setItem(IRREGULAR_STORAGE_KEY, JSON.stringify(irregularVerbs));
+  renderIrregularVerbs();
+}
+function renderIrregularVerbs() {
+  const list = $("irregularList");
+  if (!list) return;
+  const query = String($("searchIrregular")?.value || "").trim().toLocaleLowerCase("ru-RU");
+  const filtered = [...irregularVerbs]
+    .filter(v => !query || [v.v1,v.v2,v.v3,v.ru].some(x => String(x).toLocaleLowerCase("ru-RU").includes(query)))
+    .sort((a,b)=>a.v1.localeCompare(b.v1,"en"));
+  $("irregularCount").textContent = irregularVerbs.length;
+  $("emptyIrregular").classList.toggle("hidden", filtered.length > 0);
+  list.innerHTML = filtered.map(v => `
+    <article class="irregular-card">
+      <div class="irregular-forms">
+        <div><span>V1</span><strong>${escapeHtml(v.v1)}</strong></div>
+        <div><span>V2</span><strong>${escapeHtml(v.v2)}</strong></div>
+        <div><span>V3</span><strong>${escapeHtml(v.v3)}</strong></div>
+      </div>
+      <div class="irregular-translation">${escapeHtml(v.ru)}</div>
+      <div class="irregular-actions">
+        <button class="icon-button" type="button" data-speak="${escapeHtml(v.v1)}">🔊</button>
+        <button class="secondary small" type="button" data-edit-irregular="${escapeHtml(v.id)}">✏️ Редактировать</button>
+      </div>
+    </article>`).join("");
+}
+function openIrregularEditor(id = null) {
+  editingIrregularId = id;
+  const verb = id ? irregularVerbs.find(v => String(v.id) === String(id)) : null;
+  $("irregularEditorTitle").textContent = verb ? "Редактировать глагол" : "Добавить глагол";
+  $("irregularV1").value = verb?.v1 || "";
+  $("irregularV2").value = verb?.v2 || "";
+  $("irregularV3").value = verb?.v3 || "";
+  $("irregularRu").value = verb?.ru || "";
+  $("deleteIrregularButton").classList.toggle("hidden", !verb);
+  openModal("irregularEditModal");
+}
+function closeIrregularEditor() { closeModal("irregularEditModal"); editingIrregularId = null; }
+function saveIrregularEditor(event) {
+  event.preventDefault();
+  const next = normalizeIrregularVerb({
+    id: editingIrregularId || undefined,
+    v1: $("irregularV1").value, v2: $("irregularV2").value,
+    v3: $("irregularV3").value, ru: $("irregularRu").value
+  });
+  if (!next.v1 || !next.v2 || !next.v3 || !next.ru) { showToast("Заполни V1, V2, V3 и перевод"); return; }
+  const duplicate = irregularVerbs.find(v => String(v.id)!==String(editingIrregularId||"") && v.v1===next.v1 && v.v2===next.v2 && v.v3===next.v3);
+  if (duplicate) { showToast("Такой глагол уже есть"); return; }
+  const idx = irregularVerbs.findIndex(v => String(v.id)===String(editingIrregularId));
+  if (idx>=0) irregularVerbs[idx]=next; else irregularVerbs.push(next);
+  saveIrregularVerbs(); closeIrregularEditor(); showToast(idx>=0 ? "Глагол обновлён" : "Глагол добавлен");
+}
+function deleteIrregularVerb() {
+  if (!editingIrregularId) return;
+  const verb=irregularVerbs.find(v=>String(v.id)===String(editingIrregularId));
+  if (!verb || !confirm(`Удалить “${verb.v1} — ${verb.v2} — ${verb.v3}”?`)) return;
+  irregularVerbs=irregularVerbs.filter(v=>String(v.id)!==String(editingIrregularId));
+  saveIrregularVerbs(); closeIrregularEditor(); showToast("Глагол удалён");
+}
+function exportIrregularVerbs() {
+  const payload={app:"My English Dictionary",type:"irregular-verbs",exportedAt:new Date().toISOString(),irregularVerbs};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob), a=document.createElement("a");
+  a.href=url; a.download=`irregular_verbs_${new Date().toISOString().slice(0,10)}.json`; a.click(); URL.revokeObjectURL(url);
+}
+async function importIrregularVerbs(file) {
+  try {
+    const parsed=JSON.parse(await file.text());
+    const incoming=Array.isArray(parsed)?parsed:(parsed.irregularVerbs||parsed.data?.irregularVerbs);
+    if (!Array.isArray(incoming)) throw new Error();
+    const merged=new Map(irregularVerbs.map(v=>[`${v.v1}|${v.v2}|${v.v3}`,v]));
+    incoming.map(normalizeIrregularVerb).filter(v=>v.v1&&v.v2&&v.v3&&v.ru).forEach(v=>merged.set(`${v.v1}|${v.v2}|${v.v3}`,v));
+    irregularVerbs=[...merged.values()]; saveIrregularVerbs(); showToast("Неправильные глаголы импортированы");
+  } catch { alert("Не удалось импортировать файл неправильных глаголов."); }
+  finally { $("importIrregularInput").value=""; }
+}
+
+$("addIrregularButton")?.addEventListener("click", () => openIrregularEditor());
+$("emptyAddIrregularButton")?.addEventListener("click", () => openIrregularEditor());
+$("closeIrregularEditor")?.addEventListener("click", closeIrregularEditor);
+$("cancelIrregularEditor")?.addEventListener("click", closeIrregularEditor);
+$("irregularEditForm")?.addEventListener("submit", saveIrregularEditor);
+$("deleteIrregularButton")?.addEventListener("click", deleteIrregularVerb);
+$("searchIrregular")?.addEventListener("input", renderIrregularVerbs);
+$("exportIrregularButton")?.addEventListener("click", exportIrregularVerbs);
+$("importIrregularInput")?.addEventListener("change", e => { const file=e.target.files?.[0]; if(file) importIrregularVerbs(file); });
+["irregularV1","irregularV2","irregularV3"].forEach(id => {
+  $(id)?.addEventListener("input", e => {
+    const p=e.target.selectionStart; e.target.value=normalizeEnglishCase(e.target.value);
+    try { e.target.setSelectionRange(p,p); } catch {}
+  });
+});
+renderIrregularVerbs();

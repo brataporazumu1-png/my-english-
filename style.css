@@ -967,3 +967,17 @@ body.modal-open { overflow: hidden; }
   .lesson-modal-actions .danger { grid-column: 1 / -1; }
   .lesson-modal-actions .modal-actions-spacer { display: none; }
 }
+
+/* v8 irregular verbs */
+.file-button-label{display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.irregular-summary{margin-bottom:16px}
+.irregular-list{display:grid;gap:12px}
+.irregular-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,.7fr) auto;align-items:center;gap:18px;padding:18px;background:var(--panel,#111a2b);border:1px solid var(--border,rgba(255,255,255,.08));border-radius:18px}
+.irregular-forms{display:grid;grid-template-columns:repeat(3,minmax(90px,1fr));gap:10px}
+.irregular-forms>div{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.04)}
+.irregular-forms span{display:block;font-size:11px;color:var(--muted,#8b98ad);margin-bottom:4px}
+.irregular-forms strong{font-size:17px;word-break:break-word}
+.irregular-translation{font-size:16px}
+.irregular-actions{display:flex;gap:8px;align-items:center}
+@media(max-width:760px){.irregular-card{grid-template-columns:1fr;gap:12px}.irregular-forms{grid-template-columns:repeat(3,1fr)}.irregular-actions{justify-content:flex-end}}
+@media(max-width:430px){.irregular-forms{grid-template-columns:1fr}}

@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-english-dictionary-v7-full-editor";
+const CACHE_NAME = "my-english-v8";
 const APP_FILES = [
   "./",
   "./index.html",

@@ -40,6 +40,9 @@
         <button class="nav-item" data-page="stats">
           <span>📊</span><span>Прогресс</span>
         </button>
+        <button class="nav-item" data-page="irregular">
+          <span>🔁</span><span>Неправильные глаголы</span>
+        </button>
         <button class="nav-item" data-page="settings">
           <span>⚙️</span><span>Настройки</span>
         </button>
@@ -298,6 +301,30 @@
         </div>
       </section>
 
+
+      <section class="page" id="page-irregular">
+        <div class="page-head">
+          <div><p class="eyebrow">Отдельная коллекция</p><h2>Неправильные глаголы</h2></div>
+          <button id="addIrregularButton" class="primary small" type="button">+ Добавить глагол</button>
+        </div>
+        <div class="toolbar">
+          <label class="search-box"><span>⌕</span><input id="searchIrregular" type="search" placeholder="Поиск по V1, V2, V3 или переводу" autocomplete="off" /></label>
+          <button id="exportIrregularButton" class="secondary" type="button">Экспорт JSON</button>
+          <label class="secondary file-button-label">Импорт JSON<input id="importIrregularInput" type="file" accept=".json,application/json" hidden /></label>
+        </div>
+        <div class="summary-strip irregular-summary">
+          <div><strong id="irregularCount">0</strong><span>глаголов</span></div>
+          <div><strong>V1</strong><span>первая форма</span></div>
+          <div><strong>V2 / V3</strong><span>формы прошедшего</span></div>
+        </div>
+        <div id="irregularList" class="irregular-list"></div>
+        <div id="emptyIrregular" class="empty-state">
+          <div class="empty-icon">🔁</div><h3>Неправильных глаголов пока нет</h3>
+          <p>Добавь V1, V2, V3 и перевод. Они не привязаны к урокам.</p>
+          <button class="primary" id="emptyAddIrregularButton" type="button">Добавить первый глагол</button>
+        </div>
+      </section>
+
       <section class="page" id="page-settings">
         <div class="page-head">
           <div>
@@ -421,6 +448,28 @@
         <span class="modal-actions-spacer"></span>
         <button type="button" id="cancelLessonEditor" class="secondary">Отмена</button>
         <button type="submit" class="primary">Сохранить урок</button>
+      </div>
+    </form>
+  </div>
+
+
+  <div id="irregularEditModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="irregularEditorTitle">
+    <form id="irregularEditForm" class="modal-card">
+      <div class="modal-head">
+        <div><p class="eyebrow">Неправильный глагол</p><h3 id="irregularEditorTitle">Добавить глагол</h3></div>
+        <button type="button" id="closeIrregularEditor" class="icon-button" aria-label="Закрыть">×</button>
+      </div>
+      <div class="modal-grid">
+        <label><span>V1 — Infinitive</span><input id="irregularV1" type="text" placeholder="go" required /></label>
+        <label><span>V2 — Past Simple</span><input id="irregularV2" type="text" placeholder="went" required /></label>
+        <label><span>V3 — Past Participle</span><input id="irregularV3" type="text" placeholder="gone" required /></label>
+        <label><span>Перевод</span><input id="irregularRu" type="text" placeholder="идти" required /></label>
+      </div>
+      <div class="modal-actions">
+        <button type="button" id="deleteIrregularButton" class="danger hidden">Удалить</button>
+        <span class="modal-actions-spacer"></span>
+        <button type="button" id="cancelIrregularEditor" class="secondary">Отмена</button>
+        <button type="submit" class="primary">Сохранить</button>
       </div>
     </form>
   </div>
