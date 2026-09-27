@@ -1,68 +1,14 @@
 const STORAGE_KEY = "myEnglishDictionaryData_v2";
 
-const BUNDLED_DATA_VERSION = "user-json-2026-09-02-v1";
+const BUNDLED_DATA_VERSION = "user-json-2026-09-27-v2-collapsed-lessons";
 const defaultData = {
   "words": [
-    {
-      "id": "83a6a007-3f31-4333-89e4-2c379eda3344",
-      "en": "lauht at",
-      "ru": "смеяться над …",
-      "lesson": 39,
-      "correct": 0,
-      "wrong": 0,
-      "createdAt": "2026-09-01T17:29:25.545Z"
-    },
-    {
-      "id": "57577c08-3362-4806-a4bb-c949e52e3583",
-      "en": "joke",
-      "ru": "шутка",
-      "lesson": 39,
-      "correct": 0,
-      "wrong": 0,
-      "createdAt": "2026-09-01T17:29:25.545Z"
-    },
-    {
-      "id": "86fd4f32-947c-4cf4-815b-cad681d424ad",
-      "en": "in hospital",
-      "ru": "в больнице",
-      "lesson": 39,
-      "correct": 0,
-      "wrong": 0,
-      "createdAt": "2026-09-01T17:29:25.545Z"
-    },
-    {
-      "id": "0557ed73-dbe6-406e-813d-8c91a1373376",
-      "en": "compare",
-      "ru": "сравнивать",
-      "lesson": 39,
-      "correct": 0,
-      "wrong": 0,
-      "createdAt": "2026-09-01T17:29:25.546Z"
-    },
-    {
-      "id": "2df39d4c-d91e-401b-bdb0-adad95996c29",
-      "en": "necessary",
-      "ru": "необходимый",
-      "lesson": 39,
-      "correct": 0,
-      "wrong": 0,
-      "createdAt": "2026-09-01T17:29:25.546Z"
-    },
-    {
-      "id": "7d94e9d8-739b-418a-a17b-ddbc833973d7",
-      "en": "prepare for",
-      "ru": "готовиться к",
-      "lesson": 39,
-      "correct": 0,
-      "wrong": 0,
-      "createdAt": "2026-09-01T17:29:25.546Z"
-    },
     {
       "id": "c2c0ec49-c23d-495d-8411-f7bfb0f812dd",
       "en": "fat",
       "ru": "толстый",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -71,7 +17,7 @@ const defaultData = {
       "en": "surprising",
       "ru": "удивительно",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -80,7 +26,7 @@ const defaultData = {
       "en": "convenient for me",
       "ru": "удобно для меня",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -89,7 +35,7 @@ const defaultData = {
       "en": "chair",
       "ru": "стул",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -98,7 +44,7 @@ const defaultData = {
       "en": "armchair",
       "ru": "кресло",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -107,7 +53,7 @@ const defaultData = {
       "en": "desk",
       "ru": "письменный стол",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -116,7 +62,7 @@ const defaultData = {
       "en": "clear",
       "ru": "ясный",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -125,7 +71,7 @@ const defaultData = {
       "en": "go shopping",
       "ru": "ходить за покупками",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -134,7 +80,7 @@ const defaultData = {
       "en": "do the shopping",
       "ru": "делать покупки",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -143,7 +89,7 @@ const defaultData = {
       "en": "communicate",
       "ru": "общаться",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -152,7 +98,7 @@ const defaultData = {
       "en": "cake",
       "ru": "пирог",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -161,7 +107,7 @@ const defaultData = {
       "en": "furniture",
       "ru": "мебель",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -170,7 +116,7 @@ const defaultData = {
       "en": "advertising",
       "ru": "реклама",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.498Z"
     },
@@ -179,14 +125,1057 @@ const defaultData = {
       "en": "advertisement",
       "ru": "рекламное объявление",
       "lesson": 40,
-      "correct": 0,
+      "correct": 1,
       "wrong": 0,
       "createdAt": "2026-09-01T17:56:58.499Z"
+    },
+    {
+      "id": "83a6a007-3f31-4333-89e4-2c379eda3344",
+      "en": "lauht at",
+      "ru": "смеяться над …",
+      "lesson": 39,
+      "correct": 1,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.545Z"
+    },
+    {
+      "id": "57577c08-3362-4806-a4bb-c949e52e3583",
+      "en": "joke",
+      "ru": "шутка",
+      "lesson": 39,
+      "correct": 1,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.545Z"
+    },
+    {
+      "id": "86fd4f32-947c-4cf4-815b-cad681d424ad",
+      "en": "in hospital",
+      "ru": "в больнице",
+      "lesson": 39,
+      "correct": 1,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.545Z"
+    },
+    {
+      "id": "0557ed73-dbe6-406e-813d-8c91a1373376",
+      "en": "compare",
+      "ru": "сравнивать",
+      "lesson": 39,
+      "correct": 1,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.546Z"
+    },
+    {
+      "id": "2df39d4c-d91e-401b-bdb0-adad95996c29",
+      "en": "necessary",
+      "ru": "необходимый",
+      "lesson": 39,
+      "correct": 1,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.546Z"
+    },
+    {
+      "id": "7d94e9d8-739b-418a-a17b-ddbc833973d7",
+      "en": "prepare for",
+      "ru": "готовиться к",
+      "lesson": 39,
+      "correct": 1,
+      "wrong": 0,
+      "createdAt": "2026-09-01T17:29:25.546Z"
+    },
+    {
+      "id": "9a8810e7-578d-4d80-b148-5758a0259140",
+      "en": "in summer",
+      "ru": "летом",
+      "lesson": 39,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T13:22:10.935Z"
+    },
+    {
+      "id": "2bf628f7-4c4d-4ce7-8347-b24669f2da04",
+      "en": "polite",
+      "ru": "вежливый",
+      "lesson": 41,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:14:29.159Z"
+    },
+    {
+      "id": "b0808177-67be-4f00-b050-e82cbe97a393",
+      "en": "compete",
+      "ru": "соревноваться",
+      "lesson": 41,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:14:29.159Z"
+    },
+    {
+      "id": "ab773157-9e76-4b2b-9667-15919e062ffa",
+      "en": "cook",
+      "ru": "готовить",
+      "lesson": 41,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:14:29.160Z"
+    },
+    {
+      "id": "0f839385-35e9-4b38-a4d9-2cdece12053c",
+      "en": "i am fond of",
+      "ru": "я обожаю",
+      "lesson": 41,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:14:29.160Z"
+    },
+    {
+      "id": "d0c22d87-3081-48e2-a5e7-78057f83c3a0",
+      "en": "at the airport",
+      "ru": "в аэропорту",
+      "lesson": 41,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:14:29.160Z"
+    },
+    {
+      "id": "800aec09-0902-4a05-9b0c-1ccba8ea4c11",
+      "en": "hope",
+      "ru": "надеяться",
+      "lesson": 41,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:14:29.161Z"
+    },
+    {
+      "id": "090a3375-8ade-4a2b-9a4b-3400eee31d8f",
+      "en": "this year",
+      "ru": "в этом году",
+      "lesson": 41,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:14:29.162Z"
+    },
+    {
+      "id": "0b49c2b3-82f4-4b51-8399-0395ae01bf98",
+      "en": "by tomorrow",
+      "ru": "к завтрашнему дню",
+      "lesson": 41,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:14:29.162Z"
+    },
+    {
+      "id": "f952b6bf-5609-4776-b383-e29d19a46ee3",
+      "en": "each other",
+      "ru": "друг друга",
+      "lesson": 42,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:26:46.141Z"
+    },
+    {
+      "id": "274a1a3f-3edd-4b2a-8e15-f67b91f36a8e",
+      "en": "separately",
+      "ru": "раздельно",
+      "lesson": 42,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:26:46.142Z"
+    },
+    {
+      "id": "fd54adc1-0520-4ddb-ae67-371bbd725967",
+      "en": "afraid of",
+      "ru": "бояться чего то",
+      "lesson": 42,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:26:46.142Z"
+    },
+    {
+      "id": "779ed17b-6782-4acc-9ab2-0abedc2bcd7a",
+      "en": "keen on",
+      "ru": "увлекаться чем то",
+      "lesson": 42,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-02T14:26:46.142Z"
+    },
+    {
+      "id": "d9ef4d30-4dac-4ccc-9ea3-40e0b0569116",
+      "en": "thanks to you",
+      "ru": "благодаря тебе",
+      "lesson": 43,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-03T18:56:27.249Z"
+    },
+    {
+      "id": "28e512ed-f732-4cda-af03-b4f24345c3ce",
+      "en": "explanation",
+      "ru": "объяснение",
+      "lesson": 43,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-03T18:56:27.249Z"
+    },
+    {
+      "id": "ab56de56-b535-46ec-a46b-316815d6c1b9",
+      "en": "simplicity",
+      "ru": "простота",
+      "lesson": 43,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-03T18:56:27.249Z"
+    },
+    {
+      "id": "5997976b-e478-4c55-9b43-7fa741e342d0",
+      "en": "frighten",
+      "ru": "пугать",
+      "lesson": 43,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-03T18:56:27.249Z"
+    },
+    {
+      "id": "c2d7fa05-f439-4f17-84a5-38d71b80bf9d",
+      "en": "nowadays",
+      "ru": "в настоящее время",
+      "lesson": 43,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-03T18:56:27.249Z"
+    },
+    {
+      "id": "5cb85c57-5384-480d-ac26-e0da7b506fb7",
+      "en": "admire",
+      "ru": "восхищаться",
+      "lesson": 43,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-03T18:56:27.250Z"
+    },
+    {
+      "id": "0e7f9b89-13d5-4dfc-96eb-badb0f1f74de",
+      "en": "perfectly understand",
+      "ru": "прекрасно понимаю",
+      "lesson": 44,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-03T19:20:03.449Z"
+    },
+    {
+      "id": "3a776007-a01b-4568-b066-4962985a541e",
+      "en": "realize",
+      "ru": "осознавать",
+      "lesson": 44,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-03T19:20:03.449Z"
+    },
+    {
+      "id": "32b30e37-8340-45b8-9679-65c696ef7e70",
+      "en": "must",
+      "ru": "должен",
+      "lesson": 45,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:23:23.973Z"
+    },
+    {
+      "id": "d95d1212-02ce-47ec-8025-2e48db922b63",
+      "en": "should",
+      "ru": "следует",
+      "lesson": 45,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:23:23.973Z"
+    },
+    {
+      "id": "c4462a4f-77fb-479b-a720-5bf011957bc0",
+      "en": "may",
+      "ru": "возможно",
+      "lesson": 45,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:23:23.973Z"
+    },
+    {
+      "id": "35848c7b-9905-476a-a95e-1e65c4e386da",
+      "en": "might",
+      "ru": "возможно",
+      "lesson": 45,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:23:23.973Z"
+    },
+    {
+      "id": "15a0c19a-552d-4969-933e-63e6b8219944",
+      "en": "short",
+      "ru": "короткий",
+      "lesson": 46,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:44:08.052Z"
+    },
+    {
+      "id": "c9436487-9d1d-4df9-902b-652c67698757",
+      "en": "rude",
+      "ru": "грубый",
+      "lesson": 46,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:44:08.052Z"
+    },
+    {
+      "id": "f39e28dc-b758-4b70-93fa-a98e143fc974",
+      "en": "sentence",
+      "ru": "предложение в тексте",
+      "lesson": 46,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:44:08.052Z"
+    },
+    {
+      "id": "329a8124-e550-461d-97db-1ebbbbeeec8f",
+      "en": "adult",
+      "ru": "взрослый",
+      "lesson": 46,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:44:08.052Z"
+    },
+    {
+      "id": "cbbd8628-fc31-4f51-ae6b-b60e434e2147",
+      "en": "grown up",
+      "ru": "выросший/взрослый",
+      "lesson": 46,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:44:08.052Z"
+    },
+    {
+      "id": "c7d94746-577d-40b9-9d47-470a2beb5e22",
+      "en": "thin",
+      "ru": "худой (нездоровый)",
+      "lesson": 46,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:44:08.052Z"
+    },
+    {
+      "id": "3f3f241a-4ec4-4771-86db-b2dc245ff928",
+      "en": "slim",
+      "ru": "худой (стройный)",
+      "lesson": 46,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-04T19:44:08.053Z"
+    },
+    {
+      "id": "9cacfbc1-7499-4e40-bb90-967a0b918a96",
+      "en": "tall",
+      "ru": "высокий (человек)",
+      "lesson": 47,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-05T20:06:13.074Z"
+    },
+    {
+      "id": "b1254635-e336-423e-bf4b-5d470204be50",
+      "en": "advanced",
+      "ru": "продвинутый",
+      "lesson": 47,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-05T20:06:13.075Z"
+    },
+    {
+      "id": "a129547b-35db-42c5-9155-ae51a15bcfdb",
+      "en": "beginner",
+      "ru": "новичок",
+      "lesson": 47,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-05T20:06:13.075Z"
+    },
+    {
+      "id": "468d6a07-41c4-4b62-9ce0-17036b311055",
+      "en": "educated",
+      "ru": "образованный",
+      "lesson": 47,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-05T20:06:13.075Z"
+    },
+    {
+      "id": "09a1521d-b734-4d62-9a4d-33f3d65c4fb6",
+      "en": "personal",
+      "ru": "личный",
+      "lesson": 48,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-05T20:23:54.814Z"
+    },
+    {
+      "id": "64524a0d-f0b0-4a24-99c2-33fe66ed61b6",
+      "en": "in the photo",
+      "ru": "на фото",
+      "lesson": 48,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-05T20:23:54.814Z"
+    },
+    {
+      "id": "33585823-813d-4847-9d92-9dd7547c41d3",
+      "en": "disease",
+      "ru": "серьезная болезнь",
+      "lesson": 48,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-05T20:23:54.814Z"
+    },
+    {
+      "id": "063cf091-b9a6-4815-8dc4-f076b5381382",
+      "en": "cost",
+      "ru": "издержка",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.718Z"
+    },
+    {
+      "id": "e399603b-d217-485f-92aa-73009943a9c8",
+      "en": "get tired",
+      "ru": "устанешь",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.718Z"
+    },
+    {
+      "id": "474bf968-00fc-4bdf-9c9a-0b8361b81a53",
+      "en": "get",
+      "ru": "получать",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.718Z"
+    },
+    {
+      "id": "01abe8ef-1594-407d-8728-1d3956f107cd",
+      "en": "achieve",
+      "ru": "достигать",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.718Z"
+    },
+    {
+      "id": "9c022e9e-a6e5-43fd-b1b3-dff10bb71851",
+      "en": "aim",
+      "ru": "цель",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.719Z"
+    },
+    {
+      "id": "221da480-6caf-4e57-8b86-52882ca83b9e",
+      "en": "think it over",
+      "ru": "обдумать это",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.719Z"
+    },
+    {
+      "id": "ae1eb26b-9d85-4e01-ad3a-f95900c01c68",
+      "en": "grateful to you for it",
+      "ru": "благодарю тебя за это",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.720Z"
+    },
+    {
+      "id": "8b5936ed-0708-4fe5-8bf4-c8141d694e23",
+      "en": "get married",
+      "ru": "жениться",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.720Z"
+    },
+    {
+      "id": "99a92d14-3504-453c-9131-14a855c6aaae",
+      "en": "repair",
+      "ru": "починить",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.720Z"
+    },
+    {
+      "id": "eb902060-2c58-4d23-b383-3d09876fd508",
+      "en": "follow",
+      "ru": "последовать",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.720Z"
+    },
+    {
+      "id": "d8e74382-876f-405a-a0ee-8f9aa2c73905",
+      "en": "shock",
+      "ru": "шокировать",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.720Z"
+    },
+    {
+      "id": "9193052d-cace-47b5-8326-33469412ea5b",
+      "en": "surprise",
+      "ru": "удивлять",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.721Z"
+    },
+    {
+      "id": "242314d9-447b-400f-9a36-ab06b3335312",
+      "en": "greatly",
+      "ru": "очень сильно",
+      "lesson": 49,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:19:46.721Z"
+    },
+    {
+      "id": "ca94a37c-2c06-415b-8ce9-873b3271395f",
+      "en": "reinvent the wheel",
+      "ru": "изобретать заново колесо",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.792Z"
+    },
+    {
+      "id": "309828e6-769b-410e-bfe1-ac8a146c9c56",
+      "en": "invent",
+      "ru": "изобретать",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.794Z"
+    },
+    {
+      "id": "e6608b99-8838-43d8-a707-6b698e1c6a44",
+      "en": "disappointed",
+      "ru": "расстроен",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.794Z"
+    },
+    {
+      "id": "e08f068e-6e51-4537-b24e-d53e004a8e47",
+      "en": "sales manager",
+      "ru": "менеджер по продажам",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.795Z"
+    },
+    {
+      "id": "612b7208-bfe5-4043-af52-7c71977f18c0",
+      "en": "forgive",
+      "ru": "простить",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.795Z"
+    },
+    {
+      "id": "0a71600f-6066-4f7e-a21f-c2e148739f8d",
+      "en": "harry up",
+      "ru": "торопиться",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.796Z"
+    },
+    {
+      "id": "ee35051b-c7b5-4f63-bba0-b72df952acb3",
+      "en": "lend",
+      "ru": "одолжить",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.797Z"
+    },
+    {
+      "id": "f576329f-27fa-4691-bcdf-539d12ca7ff8",
+      "en": "borrow",
+      "ru": "занять",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.797Z"
+    },
+    {
+      "id": "4333b299-78f0-4c3a-a1d8-42c0a08a9edb",
+      "en": "authorities",
+      "ru": "власти",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.798Z"
+    },
+    {
+      "id": "0a98a6c5-505d-4be0-9f0a-38a07d6f5fb0",
+      "en": "devote to me",
+      "ru": "уделять мне",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.799Z"
+    },
+    {
+      "id": "c9d104ed-713c-49a3-beba-aec136cf67f8",
+      "en": "confuse",
+      "ru": "путать",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.799Z"
+    },
+    {
+      "id": "d64b6184-595e-45c3-8252-e7adb1df59e7",
+      "en": "regret it",
+      "ru": "пожалеть об этом",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.800Z"
+    },
+    {
+      "id": "57730884-be47-441a-986b-6c7b07c8e761",
+      "en": "punish",
+      "ru": "наказать",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.801Z"
+    },
+    {
+      "id": "5e14d438-dda0-46a2-9548-adb0590792c2",
+      "en": "teach a lesson",
+      "ru": "преподать урок",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.801Z"
+    },
+    {
+      "id": "0d3505c5-95fb-483d-98e2-dfdb91ab54b9",
+      "en": "apologize for it",
+      "ru": "извинитьзя за это",
+      "lesson": 50,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-09T19:55:04.802Z"
+    },
+    {
+      "id": "b34f0efa-2456-41f5-ba0f-7c5f0be391d7",
+      "en": "preparation",
+      "ru": "подготовка",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.430Z"
+    },
+    {
+      "id": "0a715a5a-06f3-46ed-83a3-13f245bb3bb9",
+      "en": "lead to success",
+      "ru": "приводить к успеху",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.431Z"
+    },
+    {
+      "id": "afb751ed-f6e1-44d1-8f67-e6b5b293542b",
+      "en": "interrupt",
+      "ru": "перебивать",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.431Z"
+    },
+    {
+      "id": "635cb82d-c2b8-4e71-8bac-1366e0241c73",
+      "en": "take part",
+      "ru": "принимать участие",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.432Z"
+    },
+    {
+      "id": "e10b5813-0265-4d5a-a147-74d5bf4ddac9",
+      "en": "competition",
+      "ru": "соревнование",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.432Z"
+    },
+    {
+      "id": "26601a82-3318-4e8d-9cb0-253853cbe6fa",
+      "en": "contest",
+      "ru": "конкурс",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.433Z"
+    },
+    {
+      "id": "5d488ae7-65a8-4cac-8c0b-0e4c5cfa24a8",
+      "en": "measure",
+      "ru": "мера",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.433Z"
+    },
+    {
+      "id": "41240229-107d-4806-9d0e-3ef924a19d6b",
+      "en": "influence",
+      "ru": "повлиять",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.434Z"
+    },
+    {
+      "id": "416e860a-ce68-4f49-8b05-f3f7e9caf32d",
+      "en": "deny",
+      "ru": "отрицать",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.435Z"
+    },
+    {
+      "id": "b665cbac-73df-448a-b484-248d414c7b1c",
+      "en": "legal",
+      "ru": "законно",
+      "lesson": 51,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T12:28:32.435Z"
+    },
+    {
+      "id": "cccd53b7-0b41-4dce-983c-c25247d78361",
+      "en": "insist on it",
+      "ru": "настаивать на этом",
+      "lesson": 52,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T13:05:32.721Z"
+    },
+    {
+      "id": "78d186eb-79f0-4d4e-b79d-e8ec37fbf002",
+      "en": "in one day",
+      "ru": "за один день",
+      "lesson": 52,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T13:05:32.722Z"
+    },
+    {
+      "id": "9e5065f4-47ff-4a96-9141-12810e8afcdb",
+      "en": "guests",
+      "ru": "гости",
+      "lesson": 52,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T13:05:32.723Z"
+    },
+    {
+      "id": "4913fd75-fa3c-432d-af95-3e80ab6c3178",
+      "en": "notice",
+      "ru": "заметить",
+      "lesson": 52,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T13:05:32.723Z"
+    },
+    {
+      "id": "762c947d-1056-4a69-8ff4-698a861a2166",
+      "en": "absence",
+      "ru": "отсутствие",
+      "lesson": 52,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T13:05:32.724Z"
+    },
+    {
+      "id": "783ad4a9-9a5e-4326-97e8-3c4334de10eb",
+      "en": "absent",
+      "ru": "отсутствует",
+      "lesson": 52,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T13:05:32.724Z"
+    },
+    {
+      "id": "8daebd52-6355-49c6-91e4-e4b02d6bb5e8",
+      "en": "present",
+      "ru": "присутствует",
+      "lesson": 52,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T13:05:32.725Z"
+    },
+    {
+      "id": "3fc68853-76e0-4af8-9cad-6ecd3e48f4f6",
+      "en": "approach",
+      "ru": "подход",
+      "lesson": 52,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-10T13:05:32.725Z"
+    },
+    {
+      "id": "8e570476-5e74-4389-8327-cf5b0050df30",
+      "en": "automatically",
+      "ru": "на автоматизме",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.037Z"
+    },
+    {
+      "id": "5e7f8379-d023-45c3-9a56-68bad9512b08",
+      "en": "attitude to problem",
+      "ru": "отношение к проблеме",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.038Z"
+    },
+    {
+      "id": "e8315fba-ac47-4325-9146-bd319098e94a",
+      "en": "point at mistakes",
+      "ru": "указать на ошибки",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.039Z"
+    },
+    {
+      "id": "cc414ca6-39e1-4f89-ba31-77f6a216c18a",
+      "en": "last forever",
+      "ru": "длиться вечно",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.040Z"
+    },
+    {
+      "id": "7c1f42a5-0850-4f25-9ea9-0f25d77f2f13",
+      "en": "last for more",
+      "ru": "длиться дольше",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.040Z"
+    },
+    {
+      "id": "94461195-9dcf-4e92-b0ef-10af25f818d6",
+      "en": "available",
+      "ru": "доступен",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.041Z"
+    },
+    {
+      "id": "92df4a25-c4aa-4d92-ab7e-5e2f06b90ddf",
+      "en": "main",
+      "ru": "основной",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.042Z"
+    },
+    {
+      "id": "56633681-4d3b-446a-80b5-5e03ab2283ca",
+      "en": "sign",
+      "ru": "подписать",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.043Z"
+    },
+    {
+      "id": "a4d40268-fc58-4f66-8acd-8370cd35be4b",
+      "en": "report",
+      "ru": "отчет",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.043Z"
+    },
+    {
+      "id": "f678a0cd-1108-41a9-adfa-937476cadb9f",
+      "en": "threat",
+      "ru": "угроза",
+      "lesson": 53,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T18:54:53.044Z"
+    },
+    {
+      "id": "31213688-886c-41b4-b858-b603ecd614fa",
+      "en": "miss the bus",
+      "ru": "пропустить автобус",
+      "lesson": 54,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T19:29:39.831Z"
+    },
+    {
+      "id": "4b994d26-427b-472b-80d4-d86cef15265f",
+      "en": "pronunciation",
+      "ru": "произношение",
+      "lesson": 54,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T19:29:39.833Z"
+    },
+    {
+      "id": "07a04c77-ce7e-4a18-8af2-6d712d8b1430",
+      "en": "guess",
+      "ru": "отгадать",
+      "lesson": 54,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T19:29:39.834Z"
+    },
+    {
+      "id": "5bd27552-f0a0-4c45-acb4-478b5cde133c",
+      "en": "look something up in a dictionary",
+      "ru": "посмотреть что то в словаре",
+      "lesson": 54,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T19:29:39.834Z"
+    },
+    {
+      "id": "08d3b8ff-b475-42e3-a6ff-54f29373ef36",
+      "en": "at last",
+      "ru": "наконец-то",
+      "lesson": 54,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T19:29:39.835Z"
+    },
+    {
+      "id": "73305c08-6658-4dd0-b2ba-c50ceb00dfea",
+      "en": "fail",
+      "ru": "завалить",
+      "lesson": 54,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T19:29:39.836Z"
+    },
+    {
+      "id": "24de5359-3689-4b89-a853-e129d2ecb701",
+      "en": "dissatisfaction",
+      "ru": "неудовлетворение",
+      "lesson": 54,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T19:29:39.837Z"
+    },
+    {
+      "id": "72615b68-78df-4735-b511-28855f61e8b0",
+      "en": "the current situation",
+      "ru": "текущая ситуация",
+      "lesson": 54,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-11T19:29:39.838Z"
+    },
+    {
+      "id": "ac6624f0-51e9-4f45-b5bc-3e8468244467",
+      "en": "produce",
+      "ru": "производить",
+      "lesson": 55,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-13T18:36:25.748Z"
+    },
+    {
+      "id": "d456004a-61d9-4fd6-8f5f-d7c56b9bfae7",
+      "en": "manage to do",
+      "ru": "суметь сделать",
+      "lesson": 55,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-13T18:36:25.749Z"
+    },
+    {
+      "id": "ff81ccd4-18bc-4382-ba38-4439ce1db33e",
+      "en": "manage",
+      "ru": "управлять",
+      "lesson": 55,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-13T18:36:25.750Z"
+    },
+    {
+      "id": "eeff06b3-ada8-46ba-9d4e-db8def0f6cad",
+      "en": "belong to him",
+      "ru": "принодлежать ему",
+      "lesson": 55,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-13T18:36:25.751Z"
+    },
+    {
+      "id": "023d23a4-64fa-47ca-8c61-091cc2ea620e",
+      "en": "spider",
+      "ru": "паук",
+      "lesson": 55,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-13T18:36:25.752Z"
+    },
+    {
+      "id": "74b122d9-06f1-4933-a344-f59a7886b171",
+      "en": "whose",
+      "ru": "Чей",
+      "lesson": 55,
+      "correct": 0,
+      "wrong": 0,
+      "createdAt": "2026-09-13T19:07:17.154Z"
     }
   ],
-  "quizHistory": [],
+  "quizHistory": [
+    {
+      "date": "2026-09-02T13:21:37.964Z",
+      "score": 20,
+      "total": 20,
+      "mode": "en-ru"
+    }
+  ],
   "settings": {
-    "version": 2
+    "version": 2,
+    "bundledDataVersion": "user-json-2026-09-02-v1"
   }
 };
 
@@ -233,19 +1222,33 @@ function loadData() {
     loaded.settings = loaded.settings || { version: 2 };
 
     if (loaded.settings.bundledDataVersion !== BUNDLED_DATA_VERSION) {
-      const existingIds = new Set(loaded.words.map((word) => String(word.id || "")));
+      const indexById = new Map(
+        loaded.words
+          .map((word, index) => [String(word.id || ""), index])
+          .filter(([id]) => id)
+      );
       const existingKeys = new Set(loaded.words.map(normalizeWordKey));
 
       for (const bundledWord of defaultData.words) {
-        const byId = bundledWord.id && existingIds.has(String(bundledWord.id));
-        const byContent = existingKeys.has(normalizeWordKey(bundledWord));
-        if (byId || byContent) continue;
-        loaded.words.push(normalizeWordRecord(structuredClone(bundledWord)));
-        if (bundledWord.id) existingIds.add(String(bundledWord.id));
-        existingKeys.add(normalizeWordKey(bundledWord));
+        const normalizedBundled = normalizeWordRecord(structuredClone(bundledWord));
+        const bundledId = String(bundledWord.id || "");
+
+        if (bundledId && indexById.has(bundledId)) {
+          const index = indexById.get(bundledId);
+          loaded.words[index] = normalizedBundled;
+          existingKeys.add(normalizeWordKey(normalizedBundled));
+          continue;
+        }
+
+        const contentKey = normalizeWordKey(normalizedBundled);
+        if (existingKeys.has(contentKey)) continue;
+
+        loaded.words.push(normalizedBundled);
+        if (bundledId) indexById.set(bundledId, loaded.words.length - 1);
+        existingKeys.add(contentKey);
       }
 
-      if (!loaded.quizHistory.length && Array.isArray(defaultData.quizHistory)) {
+      if (Array.isArray(defaultData.quizHistory)) {
         loaded.quizHistory = structuredClone(defaultData.quizHistory);
       }
 
@@ -415,7 +1418,7 @@ function renderLessons() {
     if (query && !items.length) return "";
 
     return `
-      <article class="lesson-card" data-lesson-card="${lesson}">
+      <article class="lesson-card closed" data-lesson-card="${lesson}">
         <div class="lesson-head lesson-head-editable">
           <button class="lesson-toggle-main" data-toggle-lesson type="button">
             <div>

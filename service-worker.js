@@ -1,4 +1,4 @@
-const CACHE_NAME = "my-english-v8";
+const CACHE_NAME = "my-english-v9-collapsed-lessons";
 const APP_FILES = [
   "./",
   "./index.html",
